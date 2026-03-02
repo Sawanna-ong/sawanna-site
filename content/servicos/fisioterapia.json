@@ -1,0 +1,14 @@
+{
+  "id": "fisioterapia",
+  "title": "Fisioterapia",
+  "icon": "fa-person-running",
+  "shortDesc": "Reabilitação física e motora",
+  "fullDesc": "Reabilitação para crianças com dificuldades motoras, fraqueza muscular ou sequelas de tratamentos oncológicos e neurológicos.",
+  "details": [
+    "Avaliação motora",
+    "Fortalecimento muscular",
+    "Reeducação postural",
+    "Drenagem linfática"
+  ],
+  "image": ""
+} 

@@ -1,0 +1,14 @@
+{
+  "id": "odontologia",
+  "title": "Odontologia",
+  "icon": "fa-tooth",
+  "shortDesc": "Cuidados dentários especializados",
+  "fullDesc": "Atendimento odontológico especializado para pacientes oncológicos, com protocolos específicos para prevenção e tratamento de complicações bucais.",
+  "details": [
+    "Avaliação pré-tratamento",
+    "Prevenção de mucosite",
+    "Tratamento de xerostomia",
+    "Orientação de higiene bucal"
+  ],
+  "image": ""
+} 

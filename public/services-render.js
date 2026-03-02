@@ -1,11 +1,12 @@
-// public/services-render.js
+// services-render.js - ES module for rendering services from CMS data
 
-// Renderiza cards na página
-function renderServices() {
+export function renderServices(servicesData) {
     const container = document.getElementById('services-container');
+
+    if (!container) return;
     
     container.innerHTML = servicesData.map(service => `
-        <article 
+        <article
             class="group bg-white p-6 rounded-3xl text-center shadow-sm hover:shadow-pink transition-all duration-300 border-t-4 border-transparent hover:border-secondary cursor-pointer"
             data-service-id="${service.id}"
             role="button"
@@ -23,11 +24,10 @@ function renderServices() {
         </article>
     `).join('');
     
-    // Adiciona event listeners DEPOIS de renderizar
     container.querySelectorAll('article').forEach(card => {
         card.addEventListener('click', () => {
             const serviceId = card.getAttribute('data-service-id');
-            openService(serviceId);
+            openService(servicesData, serviceId);
         });
         
         // Suporte a teclado (Enter/Space)
@@ -35,32 +35,24 @@ function renderServices() {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 const serviceId = card.getAttribute('data-service-id');
-                openService(serviceId);
+                openService(servicesData, serviceId);
             }
         });
     });
 }
 
 // Abre modal com detalhes
-function openService(serviceId) {
+function openService(servicesData, serviceId) {
     const service = servicesData.find(s => s.id === serviceId);
-    if (!service) {
-        console.error('Serviço não encontrado:', serviceId);
-        return;
-    }
+    if (!service) return;
     
     const modal = document.getElementById('service-modal');
     const content = document.getElementById('modal-content');
     
-    // Verifica se elementos existem
-    if (!modal || !content) {
-        console.error('Modal ou content não encontrado no DOM');
-        return;
-    }
+    if (!modal || !content) return;
     
     content.innerHTML = `
         <div class="relative">
-            <!-- Header com ícone -->
             <div class="h-48 bg-gradient-to-br from-primary to-secondary rounded-t-3xl flex items-center justify-center relative overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <i class="fa-solid ${service.icon} text-6xl text-white/90 relative z-10 drop-shadow-lg"></i>
@@ -68,12 +60,9 @@ function openService(serviceId) {
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
-            
-            <!-- Conteúdo -->
             <div class="p-8">
                 <h3 class="font-heading text-3xl font-bold text-primary mb-4">${service.title}</h3>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">${service.fullDesc}</p>
-                
                 <h4 class="font-heading font-bold text-secondary mb-3">O que oferecemos:</h4>
                 <ul class="space-y-2 mb-6">
                     ${service.details.map(detail => `
@@ -86,18 +75,16 @@ function openService(serviceId) {
             </div>
         </div>
     `;
-    
+
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     
-    // Animação de entrada
     requestAnimationFrame(() => {
         content.classList.remove('scale-95', 'opacity-0');
         content.classList.add('scale-100', 'opacity-100');
     });
 }
 
-// Fecha modal
 function closeModal() {
     const modal = document.getElementById('service-modal');
     const content = document.getElementById('modal-content');
@@ -111,14 +98,8 @@ function closeModal() {
     }, 300);
 }
 
-// Fecha com ESC
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
 });
 
-// Inicializa quando DOM carregar
-document.addEventListener('DOMContentLoaded', renderServices);
-
-// Expõe funções no escopo global para onclick inline
-window.openService = openService;
 window.closeModal = closeModal;

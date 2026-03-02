@@ -1,0 +1,14 @@
+{
+  "id": "fonoaudiologia",
+  "title": "Fonoaudiologia",
+  "icon": "fa-ear-listen",
+  "shortDesc": "Reabilitação da comunicação",
+  "fullDesc": "Atendimento fonoaudiológico para crianças com dificuldades de fala, linguagem, deglutição ou processamento auditivo, comuns em tratamentos oncológicos.",
+  "details": [
+    "Avaliação da linguagem",
+    "Terapia da fala",
+    "Deglutição atípica",
+    "Processamento auditivo"
+  ],
+  "image": ""
+} 

@@ -7,7 +7,7 @@
     <meta name="description"
         content="Instituto Sawanna - ONG sem fins lucrativos que acolhe e oferece atendimento multidisciplinar gratuito a crianças e adultos com câncer, doenças raras e autismo.">
     <title>Instituto Sawanna</title>
-    <link rel="stylesheet" href="output.css">
+
     <link rel="icon" type="image/x-icon" href="icon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="services-data.js" defer></script>
-    <script src="services-render.js" defer></script>
+    <script type="module" crossorigin src="/assets/index-DxMs8nc_.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BGygECP8.css">
 </head>
 
 <body class="font-body text-gray-800 overflow-x-hidden">
@@ -52,17 +52,19 @@
                             class="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary-light hover:after:w-full after:transition-all duration-300">Prestação
                             de Contas</a></li>
 
-                    <div class="flex gap-4">
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                    <div id="cms-social-header" class="flex gap-4">
+                        <a href="#" data-social="facebook" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"
                             class="w-11 h-11 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-dark hover:-translate-y-1 transition-all duration-200">
                             <i class="fa-brands fa-facebook-f text-xl"></i>
                         </a>
-                        <a href="https://www.instagram.com/instituto_sawanna" target="_blank" rel="noopener noreferrer"
-                            aria-label="Instagram"
+                        <a href="https://www.instagram.com/instituto_sawanna" data-social="instagram" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram"
                             class="w-11 h-11 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-dark hover:-translate-y-1 transition-all duration-200">
                             <i class="fa-brands fa-instagram text-xl"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                        <a href="#" data-social="whatsapp" target="_blank" rel="noopener noreferrer"
+                            aria-label="WhatsApp"
                             class="w-11 h-11 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-dark hover:-translate-y-1 transition-all duration-200">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
                         </a>
@@ -83,7 +85,7 @@
                         class="font-heading text-8xl md:text-12xl font-bold mb-4 text-shadow leading-tight"> Instituto
                         Sawanna </h1>
                 </div>
-                <p
+                <p id="cms-hero-subtitulo"
                     class="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed opacity-0 animate-fade-in-up animation-delay-200">
                     Acolhimento, amor e atendimento multidisciplinar gratuito para crianças e famílias em tratamento.
                 </p>
@@ -112,14 +114,16 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <p class="text-2xl text-secondary font-semibold leading-relaxed">Nossa missão é acolher,
+                        <p id="cms-missao-texto" class="text-2xl text-secondary font-semibold leading-relaxed">Nossa
+                            missão é acolher,
                             orientar
                             e oferecer atendimento multidisciplinar gratuito às crianças e adolescentes em tratamento
                             oncológico e às suas famílias.</p>
-                        <p class="text-lg">Trabalhamos para garantir <strong class="text-secondary">dignidade, apoio
+                        <p id="cms-missao-complemento1" class="text-lg">Trabalhamos para garantir <strong
+                                class="text-secondary">dignidade, apoio
                                 emocional, acompanhamento social e terapêutico</strong>, além de fortalecer cada mãe que
                             precisa ser forte mesmo quando está quebrada por dentro.</p>
-                        <p class="text-lg">Hoje seguimos firmes, acreditando que <em
+                        <p id="cms-missao-complemento2" class="text-lg">Hoje seguimos firmes, acreditando que <em
                                 class="text-accent-dark font-semibold">nenhuma família deve enfrentar o câncer
                                 sozinha</em>.</p>
                     </div>
@@ -160,43 +164,53 @@
                             História</h2>
                         <div class="w-20 h-1 bg-secondary rounded"></div>
 
-                        <p class="text-xl text-secondary font-semibold leading-relaxed">O Instituto Sawanna nasceu da
+                        <p id="cms-historia-destaque" class="text-xl text-secondary font-semibold leading-relaxed">O
+                            Instituto Sawanna nasceu da
                             maior dor que uma mãe pode sentir… mas também da maior força que existe: <strong>o
                                 amor</strong>.</p>
 
-                        <p>Criado em outubro de 2016, o Instituto surgiu após a perda da filha de Lena Souza para o
-                            câncer. Diante do luto, ela fez uma escolha corajosa: <em>transformar a dor em
-                                propósito</em>. Transformar lágrimas em missão. E assim, em Campos dos Goytacazes,
-                            começou uma história de acolhimento e transformação.</p>
+                        <div id="cms-historia-texto">
+                            <p>Criado em outubro de 2016, o Instituto surgiu após a perda da filha de Lena Souza para o
+                                câncer. Diante do luto, ela fez uma escolha corajosa: <em>transformar a dor em
+                                    propósito</em>. Transformar lágrimas em missão. E assim, em Campos dos Goytacazes,
+                                começou uma história de acolhimento e transformação.</p>
 
-                        <p>O que nasceu pequeno, sustentado pela fé e pela vontade de ajudar, hoje se tornou um
-                            verdadeiro movimento de cuidado.</p>
+                            <p>O que nasceu pequeno, sustentado pela fé e pela vontade de ajudar, hoje se tornou um
+                                verdadeiro movimento de cuidado.</p>
 
-                        <p>Atendemos crianças e adultos com câncer, doenças raras, doenças degenerativas e autismo.
-                            Acolhemos famílias que chegam fragilizadas pelo diagnóstico, pelo medo e pelas incertezas —
-                            e aqui encontram suporte, orientação e esperança.</p>
+                            <p>Atendemos crianças e adultos com câncer, doenças raras, doenças degenerativas e autismo.
+                                Acolhemos famílias que chegam fragilizadas pelo diagnóstico, pelo medo e pelas
+                                incertezas —
+                                e aqui encontram suporte, orientação e esperança.</p>
 
-                        <p>Também realizamos terapia alimentar, auxiliando crianças com seletividade e dificuldades na
-                            alimentação a desenvolverem autonomia e uma relação mais saudável com os alimentos.</p>
+                            <p>Também realizamos terapia alimentar, auxiliando crianças com seletividade e dificuldades
+                                na
+                                alimentação a desenvolverem autonomia e uma relação mais saudável com os alimentos.</p>
 
-                        <p>Cuidamos das mães com terapia em grupo, oferecendo um espaço seguro de escuta e
-                            fortalecimento emocional. Trabalhamos o fortalecimento do vínculo familiar, porque
-                            acreditamos que quando a família está fortalecida, a criança evolui com mais segurança e
-                            amor.</p>
+                            <p>Cuidamos das mães com terapia em grupo, oferecendo um espaço seguro de escuta e
+                                fortalecimento emocional. Trabalhamos o fortalecimento do vínculo familiar, porque
+                                acreditamos que quando a família está fortalecida, a criança evolui com mais segurança e
+                                amor.</p>
 
-                        <p>Abraçamos ainda mulheres em tratamento contra o câncer que enfrentam a perda dos cabelos. No
-                            Instituto realizamos a doação de prótese capilar, resgatando autoestima, dignidade e
-                            confiança dessas guerreiras.</p>
+                            <p>Abraçamos ainda mulheres em tratamento contra o câncer que enfrentam a perda dos cabelos.
+                                No
+                                Instituto realizamos a doação de prótese capilar, resgatando autoestima, dignidade e
+                                confiança dessas guerreiras.</p>
 
-                        <p>E vamos além do cuidado terapêutico: oferecemos cursos em diversas áreas para capacitar as
-                            mães e palestras de empreendedorismo, fortalecendo a autonomia, gerando renda e ajudando a
-                            reconstruir sonhos.</p>
+                            <p>E vamos além do cuidado terapêutico: oferecemos cursos em diversas áreas para capacitar
+                                as
+                                mães e palestras de empreendedorismo, fortalecendo a autonomia, gerando renda e ajudando
+                                a
+                                reconstruir sonhos.</p>
+
+                        </div>
 
                         <blockquote
                             class="font-heading text-xl italic text-secondary-dark border-l-4 border-secondary pl-6 my-6">
-                            "O Instituto Sawanna não é apenas um espaço de atendimento. É um lugar onde vidas são
-                            fortalecidas. Onde mães são acolhidas. Onde famílias são restauradas. Onde a dor é
-                            transformada em amor em movimento."
+                            <span id="cms-historia-citacao">"O Instituto Sawanna não é apenas um espaço de atendimento.
+                                É um lugar onde vidas são
+                                fortalecidas. Onde mães são acolhidas. Onde famílias são restauradas. Onde a dor é
+                                transformada em amor em movimento."</span>
                         </blockquote>
 
                         <p class="text-secondary font-semibold text-lg">Aqui, cada história importa.</p>
@@ -369,32 +383,36 @@
                         <address class="not-italic space-y-4 mb-8 text-lg">
                             <p>
                                 <strong class="block text-secondary">Endereço:</strong>
-                                [Inserir endereço completo]<br>
-                                [Cidade - Estado, CEP]
+                                <span id="cms-endereco">[Inserir endereço completo]</span><br>
+                                <span id="cms-cidade-estado">[Cidade - Estado, CEP]</span>
                             </p>
                             <p>
                                 <strong class="block text-secondary">Telefone:</strong>
-                                <a href="tel:+5511999999999" class="text-secondary hover:underline">(11) 99999-9999</a>
+                                <a id="cms-telefone" href="tel:+5511999999999"
+                                    class="text-secondary hover:underline">(11) 99999-9999</a>
                             </p>
                             <p>
                                 <strong class="block text-secondary">E-mail:</strong>
-                                <a href="#" class="text-secondary hover:underline">[Inserir email aqui]</a>
+                                <a id="cms-email" href="#" class="text-secondary hover:underline">[Inserir email
+                                    aqui]</a>
                             </p>
                         </address>
 
                         <div>
                             <h4 class="font-heading font-bold text-lg mb-4">Siga-nos</h4>
-                            <div class="flex gap-4">
-                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                            <div id="cms-social-contato" class="flex gap-4">
+                                <a href="#" data-social="facebook" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Facebook"
                                     class="w-11 h-11 bg-secondary text-white rounded-full flex items-center justify-center hover:bg-secondary-dark hover:-translate-y-1 transition-all duration-200">
                                     <i class="fa-brands fa-facebook-f text-xl"></i>
                                 </a>
-                                <a href="https://www.instagram.com/instituto_sawanna" target="_blank"
-                                    rel="noopener noreferrer" aria-label="Instagram"
+                                <a href="https://www.instagram.com/instituto_sawanna" data-social="instagram"
+                                    target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                                     class="w-11 h-11 bg-secondary text-white rounded-full flex items-center justify-center hover:bg-secondary-dark hover:-translate-y-1 transition-all duration-200">
                                     <i class="fa-brands fa-instagram text-xl"></i>
                                 </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                                <a href="#" data-social="whatsapp" target="_blank" rel="noopener noreferrer"
+                                    aria-label="WhatsApp"
                                     class="w-11 h-11 bg-secondary text-white rounded-full flex items-center justify-center hover:bg-secondary-dark hover:-translate-y-1 transition-all duration-200">
                                     <i class="fa-brands fa-whatsapp text-xl"></i>
                                 </a>
@@ -482,7 +500,7 @@
             </div>
             <div class="border-t border-white/20 pt-8 text-center opacity-80 text-sm">
                 <p>&copy; 2024 Instituto Sawanna. Todos os direitos reservados.</p>
-                <p>CNPJ: XX.XXX.XXX/0001-XX</p>
+                <p id="cms-cnpj">CNPJ: XX.XXX.XXX/0001-XX</p>
             </div>
         </div>
     </footer>
@@ -510,7 +528,7 @@
             select-none">
 
     <script src="script.js"></script>
-    <script type="module" src="/main.js"></script>
+
     <script>
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", function (user) {

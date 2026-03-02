@@ -86,5 +86,10 @@ collections:
           - { label: "Nome do Instituto", name: "nome", widget: "string", default: "Instituto Sawanna" }
           - { label: "CNPJ", name: "cnpj", widget: "string" }
           - { label: "Descricao do site", name: "descricao", widget: "text" }
-          - { label: "Texto da Missao", name: "missao", widget: "markdown" }
-          - { label: "Texto da Historia", name: "historia", widget: "markdown" } 
+          - { label: "Subtitulo do Hero", name: "heroSubtitulo", widget: "string" }
+          - { label: "Texto da Missao", name: "missao", widget: "text" }
+          - { label: "Complemento da Missao 1", name: "missaoComplemento1", widget: "text" }
+          - { label: "Complemento da Missao 2", name: "missaoComplemento2", widget: "text" }
+          - { label: "Destaque da Historia", name: "historia", widget: "text" }
+          - { label: "Texto completo da Historia", name: "historiaTexto", widget: "markdown" }
+          - { label: "Citacao da Historia", name: "historiaCitacao", widget: "text" } 

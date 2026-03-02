@@ -1,0 +1,15 @@
+
+{
+  "id": "nutricao",
+  "title": "Nutrição",
+  "icon": "fa-apple-whole",
+  "shortDesc": "Acompanhamento nutricional especializado",
+  "fullDesc": "Avaliação e acompanhamento nutricional para pacientes oncológicos, considerando os efeitos colaterais do tratamento e necessidades específicas de cada fase.",
+  "details": [
+    "Avaliação nutricional completa",
+    "Planejamento alimentar individualizado",
+    "Orientação durante quimioterapia",
+    "Controle de efeitos colaterais"
+  ],
+  "image": ""
+} 
