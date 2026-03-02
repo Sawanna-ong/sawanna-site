@@ -1,5 +1,6 @@
 // main.js
 import './input.css'
+import './script.js'
 import { renderServices } from './services-render.js'
 
 // =============================================
@@ -15,13 +16,10 @@ import contatoData from '/content/configuracoes/contato.json'
 import geralData from '/content/configuracoes/geral.json'
 
 // =============================================
-// 3. Galeria - carrega imagens por pasta
-// ============================================= 
-const galleryLines = {
-    line1: import.meta.glob('/public/gallery/line1/*.{png,jpg,jpeg}', { eager: true }),
-    line2: import.meta.glob('/public/gallery/line2/*.{png,jpg,jpeg}', { eager: true }),
-    line3: import.meta.glob('/public/gallery/line3/*.{png,jpg,jpeg}', { eager: true }),
-}
+// 3. Galeria - carrega itens do CMS (content/galeria/*.json)
+// =============================================
+const galleryModules = import.meta.glob('/content/galeria/*.json', { eager: true })
+const galleryData = Object.values(galleryModules).map(m => m.default)
 
 // =============================================
 // Inicialização quando DOM estiver pronto
@@ -120,25 +118,33 @@ function updateSocialLinks(containerId, data) {
 }
 
 // =============================================
-// Renderiza galeria com carrosséis
+// Renderiza galeria com carrosséis usando dados do CMS
 // =============================================
 function renderGallery() {
     const container = document.getElementById('gallery-container')
     if (!container) return
 
-    Object.entries(galleryLines).forEach(([folderName, images], index) => {
+    // agrupa itens por linha definida no JSON
+    const lines = { line1: [], line2: [], line3: [] }
+    galleryData.forEach(item => {
+        const line = item.line || 'line1'
+        if (lines[line]) lines[line].push(item)
+    })
+
+    Object.values(lines).forEach((items, index) => {
+        if (items.length === 0) return
+
+        items.sort((a, b) => (a.order || 0) - (b.order || 0))
+
         const wrapper = document.createElement('div')
         wrapper.className = 'carousel-wrapper'
 
         const track = document.createElement('div')
         track.className = 'carousel-track'
+        if (index % 2 !== 0) track.classList.add('reverse')
 
-        if (index % 2 !== 0) {
-            track.classList.add('reverse')
-        }
-
-        const imagePaths = Object.values(images).map(img => img.default)
-        const duplicated = [...imagePaths, ...imagePaths]
+        const paths = items.map(i => i.image).filter(Boolean)
+        const duplicated = [...paths, ...paths]
 
         duplicated.forEach(src => {
             const img = document.createElement('img')

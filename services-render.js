@@ -5,7 +5,15 @@ export function renderServices(servicesData) {
 
     if (!container) return;
     
-    container.innerHTML = servicesData.map(service => `
+    container.innerHTML = servicesData.map(service => {
+        // if the CMS provided an image, show it above the icon
+        const imgMarkup = service.image
+            ? `<div class="mb-4">
+                    <img src="${service.image}" alt="${service.title}" class="mx-auto h-20 w-auto object-contain rounded-lg" />
+               </div>`
+            : '';
+
+        return `
         <article
             class="group bg-white p-6 rounded-3xl text-center shadow-sm hover:shadow-pink transition-all duration-300 border-t-4 border-transparent hover:border-secondary cursor-pointer"
             data-service-id="${service.id}"
@@ -13,6 +21,7 @@ export function renderServices(servicesData) {
             tabindex="0"
             aria-label="Ver detalhes de ${service.title}"
         >
+            ${imgMarkup}
             <div class="w-16 h-16 mx-auto mb-4 bg-bg-soft rounded-full flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
                 <i class="fa-solid ${service.icon} text-2xl text-secondary group-hover:text-white"></i>
             </div>
@@ -22,7 +31,8 @@ export function renderServices(servicesData) {
                 Clique para saber mais →
             </div>
         </article>
-    `).join('');
+    `;
+    }).join('');
     
     container.querySelectorAll('article').forEach(card => {
         card.addEventListener('click', () => {
@@ -51,15 +61,22 @@ function openService(servicesData, serviceId) {
     
     if (!modal || !content) return;
     
-    content.innerHTML = `
-        <div class="relative">
-            <div class="h-48 bg-gradient-to-br from-primary to-secondary rounded-t-3xl flex items-center justify-center relative overflow-hidden">
+    // image banner if available
+    const banner = service.image
+        ? `<div class="h-48 bg-cover bg-center rounded-t-3xl relative overflow-hidden" style="background-image:url('${service.image}')">
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>`
+        : `<div class="h-48 bg-gradient-to-br from-primary to-secondary rounded-t-3xl flex items-center justify-center relative overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <i class="fa-solid ${service.icon} text-6xl text-white/90 relative z-10 drop-shadow-lg"></i>
-                <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white transition-colors z-20">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
+            </div>`;
+
+    content.innerHTML = `
+        <div class="relative">
+            ${banner}
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white transition-colors z-20">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
             <div class="p-8">
                 <h3 class="font-heading text-3xl font-bold text-primary mb-4">${service.title}</h3>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">${service.fullDesc}</p>
