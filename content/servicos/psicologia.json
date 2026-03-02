@@ -1,0 +1,9 @@
+{
+  "id": "psicologia",
+  "title": "Psicologia",
+  "icon": "fa-comments",
+  "shortDesc": "Apoio emocional para criancas e familiares",
+  "fullDesc": "Atendimento psicologico especializado para criancas em tratamento oncologico e seus familiares. Trabalhamos o luto, a ansiedade e o fortalecimento emocional durante todo o processo.",
+  "details": ["Terapia individual infantil", "Terapia familiar", "Grupos de apoio", "Acolhimento ao luto"],
+  "image": ""
+} 

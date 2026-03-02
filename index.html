@@ -15,6 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="services-data.js" defer></script>
     <script src="services-render.js" defer></script>
 </head>
@@ -73,8 +74,7 @@
         <section class="relative flex items-center justify-center text-center text-white pb-5"
             aria-labelledby="hero-title">
             <div class="relative z-20 flex-shrink-0 self-end translate-y-[20%] translate-x-[10%]">
-                <img src="sawanna.png"
-                    class="h-[clamp(400px,50vh,500px)] object-contain">
+                <img src="sawanna.png" class="h-[clamp(400px,50vh,500px)] object-contain">
             </div>
             <div class="relative z-10 max-w-3xl opacity-0 animate-fade-in-up translate-x-[-10%]">
                 <div class="flex justify-center items-center gap-4 mb-6">
@@ -210,7 +210,8 @@
             aria-labelledby="services-title">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 id="services-title" class="font-heading text-4xl md:text-5xl font-bold text-secondary mb-4">Nossos Serviços</h2>
+                    <h2 id="services-title" class="font-heading text-4xl md:text-5xl font-bold text-secondary mb-4">
+                        Nossos Serviços</h2>
                     <p class="text-xl text-gray-600 mb-4">Atendimento multidisciplinar gratuito</p>
                     <div class="w-20 h-1 bg-secondary mx-auto rounded"></div>
                 </div>
@@ -512,12 +513,12 @@
     <script type="module" src="/main.js"></script>
     <script>
         if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-            if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-                });
-            }
+            window.netlifyIdentity.on("init", function (user) {
+                if (!user) {
+                    window.netlifyIdentity.on("login", function () {
+                        document.location.href = "/admin/";
+                    });
+                }
             });
         }
     </script>

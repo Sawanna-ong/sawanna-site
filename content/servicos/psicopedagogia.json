@@ -1,0 +1,9 @@
+{
+  "id": "psicopedagogia",
+  "title": "Psicopedagogia",
+  "icon": "fa-brain",
+  "shortDesc": "Acompanhamento educacional especializado",
+  "fullDesc": "A psicopedagogia ajuda criancas com dificuldades de aprendizagem a desenvolverem estrategias cognitivas personalizadas. Nossa equipe avalia e intervem nas dificuldades escolares, considerando aspectos emocionais e neurologicos.",
+  "details": ["Avaliacao neuropsicologica", "Reforco escolar individualizado", "Desenvolvimento de habilidades cognitivas", "Orientacao as familias"],
+  "image": ""
+} 

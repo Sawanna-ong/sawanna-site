@@ -2,26 +2,89 @@ backend:
   name: git-gateway
   branch: main
 
+locale: pt
+
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "servicos"
+    label: "Servicos"
+    label_singular: "Servico"
+    folder: "content/servicos"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "ID", name: "id", widget: "string", hint: "Identificador unico (ex: psicologia)" }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - label: "Icone Font Awesome"
+        name: "icon"
+        widget: "select"
+        options:
+          - { label: "Cerebro (Psicopedagogia)", value: "fa-brain" }
+          - { label: "Conversas (Psicologia)", value: "fa-comments" }
+          - { label: "Maca (Nutricao)", value: "fa-apple-whole" }
+          - { label: "Talheres (Terapia Alimentar)", value: "fa-utensils" }
+          - { label: "Ouvido (Fonoaudiologia)", value: "fa-ear-listen" }
+          - { label: "Corrida (Fisioterapia)", value: "fa-person-running" }
+          - { label: "Lista (Assistencia Social)", value: "fa-clipboard-list" }
+          - { label: "Coroa (Protese Capilar)", value: "fa-crown" }
+          - { label: "Dente (Odontologia)", value: "fa-tooth" }
+          - { label: "Grupo (Grupo de Maes)", value: "fa-people-group" }
+          - { label: "Coracao", value: "fa-heart" }
+          - { label: "Maos", value: "fa-hand-holding-heart" }
+          - { label: "Estrela", value: "fa-star" }
+      - { label: "Descricao curta", name: "shortDesc", widget: "string" }
+      - { label: "Descricao completa", name: "fullDesc", widget: "text" }
+      - label: "Detalhes"
+        name: "details"
+        widget: "list"
+        field: { label: "Item", name: "item", widget: "string" }
+      - { label: "Imagem", name: "image", widget: "image", required: false }
 
   - name: "galeria"
     label: "Galeria"
+    label_singular: "Imagem"
     folder: "content/galeria"
     create: true
     slug: "{{slug}}"
+    extension: "json"
+    format: "json"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Imagem", name: "image", widget: "image" }
+      - { label: "Descricao", name: "description", widget: "string", required: false }
+      - label: "Linha do carrossel"
+        name: "line"
+        widget: "select"
+        options:
+          - { label: "Linha 1", value: "line1" }
+          - { label: "Linha 2", value: "line2" }
+          - { label: "Linha 3", value: "line3" }
+      - { label: "Ordem", name: "order", widget: "number", value_type: "int", default: 0 }
 
-  - name: "prestacao"
-    label: "Prestação de Contas"
-    folder: "content/prestacao"
-    create: true
-    slug: "{{year}}"
-    fields:
-      - { label: "Ano", name: "year", widget: "string" }
-      - { label: "Relatório de Atividades (PDF)", name: "relatorio", widget: "file" }
-      - { label: "Balanço Financeiro (PDF)", name: "balanco", widget: "file" }
+  - name: "configuracoes"
+    label: "Configuracoes do Site"
+    files:
+      - name: "contato"
+        label: "Informacoes de Contato"
+        file: "content/configuracoes/contato.json"
+        fields:
+          - { label: "Endereco", name: "endereco", widget: "string" }
+          - { label: "Cidade/Estado/CEP", name: "cidadeEstadoCep", widget: "string" }
+          - { label: "Telefone", name: "telefone", widget: "string" }
+          - { label: "E-mail", name: "email", widget: "string" }
+          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "WhatsApp URL", name: "whatsapp", widget: "string", required: false }
+      - name: "geral"
+        label: "Informacoes Gerais"
+        file: "content/configuracoes/geral.json"
+        fields:
+          - { label: "Nome do Instituto", name: "nome", widget: "string", default: "Instituto Sawanna" }
+          - { label: "CNPJ", name: "cnpj", widget: "string" }
+          - { label: "Descricao do site", name: "descricao", widget: "text" }
+          - { label: "Texto da Missao", name: "missao", widget: "markdown" }
+          - { label: "Texto da Historia", name: "historia", widget: "markdown" } 
