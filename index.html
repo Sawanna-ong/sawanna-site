@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Instituto Sawanna - ONG sem fins lucrativos que acolhe e oferece atendimento multidisciplinar gratuito a crianças e adultos com câncer, doenças raras e autismo.">
+    <title>Instituto Sawanna | Transformando Dor em Amor</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="services-data.js" defer></script>
+    <script src="services-render.js" defer></script>
+</head>
+
+<body class="font-body text-gray-800 overflow-x-hidden">
+    <!-- Header -->
+    <header class="bg-gradient-to-br from-primary to-primary-light pt-4">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center relative z-10">
+
+            <img src="logo.png" alt="Instituto Sawanna" class="h-22 w-auto">
+            <nav aria-label="Navegação principal">
+                <button id="nav-toggle" class="lg:hidden bg-transparent border-none cursor-pointer p-2"
+                    aria-expanded="false" aria-controls="nav-menu">
+                    <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+                    <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+                    <span class="block w-6 h-0.5 bg-white"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+                <ul id="nav-menu"
+                    class="hidden lg:flex gap-8 items-center absolute lg:static top-20 left-0 right-0 bg-white lg:bg-transparent flex-col lg:flex-row p-6 lg:p-0 shadow-lg lg:shadow-none">
+                    <li><a href="#missao"
+                            class="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary-light hover:after:w-full after:transition-all duration-300">Nossa
+                            Missão</a></li>
+                    <li><a href="#servicos"
+                            class="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary-light hover:after:w-full after:transition-all duration-300">Serviços</a>
+                    </li>
+                    <li><a href="#historia"
+                            class="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary-light hover:after:w-full after:transition-all duration-300">Nossa
+                            História</a></li>
+                    <li><a href="#galeria"
+                            class="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary-light hover:after:w-full after:transition-all duration-300">Galeria</a>
+                    </li>
+                    <li><a href="#transparencia"
+                            class="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary-light hover:after:w-full after:transition-all duration-300">Prestação
+                            de Contas</a></li>
+
+                    <div class="flex gap-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                            class="w-11 h-11 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-dark hover:-translate-y-1 transition-all duration-200">
+                            <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/instituto_sawanna" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="w-11 h-11 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-dark hover:-translate-y-1 transition-all duration-200">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                            class="w-11 h-11 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-dark hover:-translate-y-1 transition-all duration-200">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <!-- Hero Section -->
+        <section class="relative flex items-center justify-center text-center text-white pb-5"
+            aria-labelledby="hero-title">
+            <div class="relative z-20 flex-shrink-0 self-end translate-y-[20%] translate-x-[10%]">
+                <img src="sawanna.png"
+                    class="h-[clamp(400px,50vh,500px)] object-contain">
+            </div>
+            <div class="relative z-10 max-w-3xl opacity-0 animate-fade-in-up translate-x-[-10%]">
+                <div class="flex justify-center items-center gap-4 mb-6">
+                    <img src="logo3.png" alt="Coração" class="w-64 h-64 mb-4 mx-auto">
+                    <h1 id="hero-title"
+                        class="font-heading text-8xl md:text-12xl font-bold mb-4 text-shadow leading-tight"> Instituto
+                        Sawanna </h1>
+                </div>
+                <p
+                    class="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed opacity-0 animate-fade-in-up animation-delay-200">
+                    Acolhimento, amor e atendimento multidisciplinar gratuito para crianças e famílias em tratamento.
+                </p>
+
+            </div>
+            <!-- Onda decorativa -->
+            <div class="absolute bottom-0 left-0 w-full leading-none translate-y-[1px]">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    class="w-full h-16 sm:h-20 md:h-24 lg:h-28 block">
+                    <path
+                        d="M0 120L48 114C96 108 192 96 288 90C384 84 480 84 576 88C672 92 768 100 864 104C960 108 1056 108 1152 104C1248 100 1344 92 1392 88L1440 84V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0Z"
+                        fill="white" />
+                </svg>
+            </div>
+        </section>
+    </header>
+
+    <main class="mt-10">
+        <!-- Missão -->
+        <section id="missao" class="py-12 px-8" aria-labelledby="mission-title">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 id="mission-title" class="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">Nossa
+                        Missão</h2>
+                    <div class="w-20 h-1 bg-secondary mx-auto rounded"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-2xl text-secondary font-semibold leading-relaxed">Nossa missão é acolher,
+                            orientar
+                            e oferecer atendimento multidisciplinar gratuito às crianças e adolescentes em tratamento
+                            oncológico e às suas famílias.</p>
+                        <p class="text-lg">Trabalhamos para garantir <strong class="text-secondary">dignidade, apoio
+                                emocional, acompanhamento social e terapêutico</strong>, além de fortalecer cada mãe que
+                            precisa ser forte mesmo quando está quebrada por dentro.</p>
+                        <p class="text-lg">Hoje seguimos firmes, acreditando que <em
+                                class="text-accent-dark font-semibold">nenhuma família deve enfrentar o câncer
+                                sozinha</em>.</p>
+                    </div>
+                    <div class="space-y-6">
+                        <div
+                            class="bg-bg-soft p-8 rounded-3xl text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-solid fa-hand-holding-heart text-5xl block mb-4 text-secondary"></i>
+                            <h3 class="font-heading text-secondary text-xl font-bold mb-2">Acolhimento</h3>
+                            <p>Um abraço, uma escuta, um cuidado genuíno</p>
+                        </div>
+                        <div
+                            class="bg-bg-soft p-8 rounded-3xl text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-solid fa-heart text-5xl block mb-4 text-accent"></i>
+                            <h3 class="font-heading text-secondary text-xl font-bold mb-2">Esperança</h3>
+                            <p>Transformando realidades com amor</p>
+                        </div>
+                        <div
+                            class="bg-bg-soft p-8 rounded-3xl text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-solid fa-hospital text-5xl block mb-4 text-secondary"></i>
+                            <h3 class="font-heading text-secondary text-xl font-bold mb-2">Cuidado</h3>
+                            <p>Atendimento multidisciplinar gratuito</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- História -->
+        <section id="historia" class="py-24 px-4 bg-bg-pink" aria-labelledby="story-title">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl order-2 md:order-1 group z-1">
+                        <img src="instituto-sawanna.png" alt="instituto sawanna" loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="order-1 md:order-2 space-y-6">
+                        <h2 id="story-title" class="font-heading text-4xl md:text-5xl font-bold text-secondary">Nossa
+                            História</h2>
+                        <div class="w-20 h-1 bg-secondary rounded"></div>
+
+                        <p class="text-xl text-secondary font-semibold leading-relaxed">O Instituto Sawanna nasceu da
+                            maior dor que uma mãe pode sentir… mas também da maior força que existe: <strong>o
+                                amor</strong>.</p>
+
+                        <p>Criado em outubro de 2016, o Instituto surgiu após a perda da filha de Lena Souza para o
+                            câncer. Diante do luto, ela fez uma escolha corajosa: <em>transformar a dor em
+                                propósito</em>. Transformar lágrimas em missão. E assim, em Campos dos Goytacazes,
+                            começou uma história de acolhimento e transformação.</p>
+
+                        <p>O que nasceu pequeno, sustentado pela fé e pela vontade de ajudar, hoje se tornou um
+                            verdadeiro movimento de cuidado.</p>
+
+                        <p>Atendemos crianças e adultos com câncer, doenças raras, doenças degenerativas e autismo.
+                            Acolhemos famílias que chegam fragilizadas pelo diagnóstico, pelo medo e pelas incertezas —
+                            e aqui encontram suporte, orientação e esperança.</p>
+
+                        <p>Também realizamos terapia alimentar, auxiliando crianças com seletividade e dificuldades na
+                            alimentação a desenvolverem autonomia e uma relação mais saudável com os alimentos.</p>
+
+                        <p>Cuidamos das mães com terapia em grupo, oferecendo um espaço seguro de escuta e
+                            fortalecimento emocional. Trabalhamos o fortalecimento do vínculo familiar, porque
+                            acreditamos que quando a família está fortalecida, a criança evolui com mais segurança e
+                            amor.</p>
+
+                        <p>Abraçamos ainda mulheres em tratamento contra o câncer que enfrentam a perda dos cabelos. No
+                            Instituto realizamos a doação de prótese capilar, resgatando autoestima, dignidade e
+                            confiança dessas guerreiras.</p>
+
+                        <p>E vamos além do cuidado terapêutico: oferecemos cursos em diversas áreas para capacitar as
+                            mães e palestras de empreendedorismo, fortalecendo a autonomia, gerando renda e ajudando a
+                            reconstruir sonhos.</p>
+
+                        <blockquote
+                            class="font-heading text-xl italic text-secondary-dark border-l-4 border-secondary pl-6 my-6">
+                            "O Instituto Sawanna não é apenas um espaço de atendimento. É um lugar onde vidas são
+                            fortalecidas. Onde mães são acolhidas. Onde famílias são restauradas. Onde a dor é
+                            transformada em amor em movimento."
+                        </blockquote>
+
+                        <p class="text-secondary font-semibold text-lg">Aqui, cada história importa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços -->
+        <section id="servicos" class="py-24 px-4 bg-gradient-to-b from-white to-bg-pink"
+            aria-labelledby="services-title">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 id="services-title" class="font-heading text-4xl md:text-5xl font-bold text-secondary mb-4">Nossos Serviços</h2>
+                    <p class="text-xl text-gray-600 mb-4">Atendimento multidisciplinar gratuito</p>
+                    <div class="w-20 h-1 bg-secondary mx-auto rounded"></div>
+                </div>
+
+                <!-- Container onde os cards serão injetados -->
+                <div id="services-container" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+                    <!-- JavaScript injeta aqui -->
+                </div>
+
+                <div class="text-center p-6 bg-bg-soft rounded-2xl">
+                    <p class="text-lg"><strong class="text-secondary">Público atendido:</strong> Crianças e adultos com
+                        câncer, doenças raras, degenerativas e autismo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria/Carrossel -->
+        <section id="galeria" class="py-24 bg-bg-pink overflow-hidden">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-secondary mb-4">
+                    Nossa Galeria
+                </h2>
+                <p class="text-xl text-gray-600 mb-4">
+                    Momentos de amor e esperança
+                </p>
+                <div class="w-20 h-1 bg-secondary mx-auto rounded"></div>
+            </div>
+
+            <div id="gallery-container" class="space-y-10"></div>
+        </section>
+
+        <!-- Prestação de Contas -->
+        <section id="transparencia" class="py-24 px-4" aria-labelledby="transparency-title">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 id="transparency-title" class="font-heading text-4xl md:text-5xl font-bold text-secondary mb-4">
+                        Prestação de Contas</h2>
+                    <p class="text-xl text-gray-600 mb-4">Transparência é o nosso compromisso</p>
+                    <div class="w-20 h-1 bg-secondary mx-auto rounded"></div>
+                </div>
+
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <p class="text-xl text-gray-600">Como organização sem fins lucrativos, acreditamos que a confiança é
+                        construída através da transparência total na gestão dos recursos.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <article
+                        class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span
+                            class="inline-block bg-secondary text-white px-4 py-1 rounded-lg font-bold text-sm mb-4">2026</span>
+                        <h3 class="font-heading text-xl font-bold text-gray-800 mb-4">Relatório Anual 2026</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="reports/relatorio-2026.pdf" target="_blank"
+                                    class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
+                                    <i class="fa-solid fa-chart-pie text-xl text-secondary"></i>
+                                    <span>Relatório de Atividades (PDF)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reports/balanco-2026.pdf" target="_blank"
+                                    class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
+                                    <i class="fa-solid fa-coins text-xl text-secondary"></i>
+                                    <span>Balanço Financeiro (PDF)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article
+                        class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span
+                            class="inline-block bg-secondary text-white px-4 py-1 rounded-lg font-bold text-sm mb-4">2025</span>
+                        <h3 class="font-heading text-xl font-bold text-gray-800 mb-4">Relatório Anual 2025</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="reports/relatorio-2025.pdf" target="_blank"
+                                    class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
+                                    <i class="fa-solid fa-chart-pie text-xl text-secondary"></i>
+                                    <span>Relatório de Atividades (PDF)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reports/balanco-2025.pdf" target="_blank"
+                                    class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
+                                    <i class="fa-solid fa-coins text-xl text-secondary"></i>
+                                    <span>Balanço Financeiro (PDF)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article
+                        class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span
+                            class="inline-block bg-secondary text-white px-4 py-1 rounded-lg font-bold text-sm mb-4">2024</span>
+                        <h3 class="font-heading text-xl font-bold text-gray-800 mb-4">Relatório Anual 2024</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="reports/relatorio-2024.pdf" target="_blank"
+                                    class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
+                                    <i class="fa-solid fa-chart-pie text-xl text-secondary"></i>
+                                    <span>Relatório de Atividades (PDF)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reports/balanco-2024.pdf" target="_blank"
+                                    class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
+                                    <i class="fa-solid fa-coins text-xl text-secondary"></i>
+                                    <span>Balanço Financeiro (PDF)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="bg-bg-soft rounded-3xl p-8 text-center">
+                    <h3 class="font-heading text-2xl font-bold text-secondary mb-6">Certificações e Regularidade</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-2xl shadow-sm">
+                            <i class="fa-solid fa-circle-check text-green-600"></i>
+                            <span>CNPJ Ativo</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-2xl shadow-sm">
+                            <i class="fa-solid fa-circle-check text-green-600"></i>
+                            <span>Certificado de Utilidade Pública</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-2xl shadow-sm">
+                            <i class="fa-solid fa-circle-check text-green-600"></i>
+                            <span>OSCIP</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-2xl shadow-sm">
+                            <i class="fa-solid fa-circle-check text-green-600"></i>
+                            <span>Regularidade Fiscal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="py-24 px-4 bg-bg-pink" aria-labelledby="contact-title">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 id="contact-title" class="font-heading text-4xl md:text-5xl font-bold text-secondary mb-4">Entre
+                        em Contato</h2>
+                    <p class="text-xl text-gray-600 mb-4">Como você pode ajudar ou ser ajudado</p>
+                    <div class="w-20 h-1 bg-secondary mx-auto rounded"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="font-heading text-2xl font-bold text-secondary mb-6">Informações de Contato</h3>
+                        <address class="not-italic space-y-4 mb-8 text-lg">
+                            <p>
+                                <strong class="block text-secondary">Endereço:</strong>
+                                [Inserir endereço completo]<br>
+                                [Cidade - Estado, CEP]
+                            </p>
+                            <p>
+                                <strong class="block text-secondary">Telefone:</strong>
+                                <a href="tel:+5511999999999" class="text-secondary hover:underline">(11) 99999-9999</a>
+                            </p>
+                            <p>
+                                <strong class="block text-secondary">E-mail:</strong>
+                                <a href="#" class="text-secondary hover:underline">[Inserir email aqui]</a>
+                            </p>
+                        </address>
+
+                        <div>
+                            <h4 class="font-heading font-bold text-lg mb-4">Siga-nos</h4>
+                            <div class="flex gap-4">
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                                    class="w-11 h-11 bg-secondary text-white rounded-full flex items-center justify-center hover:bg-secondary-dark hover:-translate-y-1 transition-all duration-200">
+                                    <i class="fa-brands fa-facebook-f text-xl"></i>
+                                </a>
+                                <a href="https://www.instagram.com/instituto_sawanna" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Instagram"
+                                    class="w-11 h-11 bg-secondary text-white rounded-full flex items-center justify-center hover:bg-secondary-dark hover:-translate-y-1 transition-all duration-200">
+                                    <i class="fa-brands fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                                    class="w-11 h-11 bg-secondary text-white rounded-full flex items-center justify-center hover:bg-secondary-dark hover:-translate-y-1 transition-all duration-200">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="bg-white p-8 rounded-3xl shadow-lg" aria-label="Formulário de contato">
+                        <h3 class="font-heading text-2xl font-bold text-secondary mb-6">Envie uma mensagem</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="name" class="block font-semibold mb-2">Nome completo</label>
+                                <input type="text" id="name" name="name" required aria-required="true"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block font-semibold mb-2">E-mail</label>
+                                <input type="email" id="email" name="email" required aria-required="true"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="phone" class="block font-semibold mb-2">Telefone</label>
+                                <input type="tel" id="phone" name="phone"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="subject" class="block font-semibold mb-2">Assunto</label>
+                                <select id="subject" name="subject" required aria-required="true"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:outline-none transition-colors">
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="ajuda">Quero ser voluntário</option>
+                                    <option value="doacao">Quero fazer uma doação</option>
+                                    <option value="atendimento">Preciso de atendimento</option>
+                                    <option value="parceria">Proposta de parceria</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block font-semibold mb-2">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"
+                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-secondary focus:outline-none transition-colors resize-y min-h-32"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full px-8 py-4 bg-secondary text-white font-heading font-semibold rounded-2xl shadow-lg hover:bg-secondary-dark hover:-translate-y-0.5 transition-all duration-200">Enviar
+                                Mensagem</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-primary to-primary-dark text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div class="text-center md:text-left">
+                    <img src="logo.png" alt="Instituto Sawanna" class="h-20 mb-4 mx-auto md:mx-0 brightness-0 invert">
+                    <p class="opacity-90 max-w-xs mx-auto md:mx-0">Transformando dor em propósito desde 2016.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-6 text-secondary-light">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#missao"
+                                class="opacity-90 hover:opacity-100 hover:text-secondary-light transition-colors">Nossa
+                                Missão</a></li>
+                        <li><a href="#servicos"
+                                class="opacity-90 hover:opacity-100 hover:text-secondary-light transition-colors">Serviços</a>
+                        </li>
+                        <li><a href="#transparencia"
+                                class="opacity-90 hover:opacity-100 hover:text-secondary-light transition-colors">Prestação
+                                de Contas</a></li>
+                        <li><a href="#contato"
+                                class="opacity-90 hover:opacity-100 hover:text-secondary-light transition-colors">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-heading font-bold text-lg mb-6 text-secondary-light">Faça uma Doação</h4>
+                    <p class="opacity-90 mb-4">Sua contribuição transforma vidas.</p>
+                    <a href="#contato"
+                        class="inline-block px-6 py-3 border-2 border-secondary text-secondary font-semibold rounded-2xl hover:bg-secondary hover:text-white transition-all duration-200">Quero
+                        Doar</a>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center opacity-80 text-sm">
+                <p>&copy; 2024 Instituto Sawanna. Todos os direitos reservados.</p>
+                <p>CNPJ: XX.XXX.XXX/0001-XX</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="service-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative z-10 h-full flex items-center justify-center p-4">
+            <div id="modal-content"
+                class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300">
+                <!-- Conteúdo injetado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <img src="/autism-awareness.png" alt="" aria-hidden="true" class="absolute left-0 top-6/4 -translate-y-1/2
+            opacity-25
+            w-[300px] md:w-[400px]
+            pointer-events-none
+            select-none">
+
+    <img src="/cancer-awareness.png" alt="" aria-hidden="true" class="absolute right-0 top-7/3 -translate-y-1/2
+            opacity-25
+            w-[250px] md:w-[350px]
+            pointer-events-none
+            select-none">
+
+    <script src="script.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
