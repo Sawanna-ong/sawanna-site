@@ -44,26 +44,7 @@ collections:
         field: { label: "Item", name: "item", widget: "string" }
       - { label: "Imagem", name: "image", widget: "image", required: false }
 
-  - name: "galeria"
-    label: "Galeria"
-    label_singular: "Imagem"
-    folder: "content/galeria"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - { label: "Titulo", name: "title", widget: "string" }
-      - { label: "Imagem", name: "image", widget: "image" }
-      - { label: "Descricao", name: "description", widget: "string", required: false }
-      - label: "Linha do carrossel"
-        name: "line"
-        widget: "select"
-        options:
-          - { label: "Linha 1", value: "line1" }
-          - { label: "Linha 2", value: "line2" }
-          - { label: "Linha 3", value: "line3" }
-      - { label: "Ordem", name: "order", widget: "number", value_type: "int", default: 0 }
+
 
   - name: "configuracoes"
     label: "Configuracoes do Site"

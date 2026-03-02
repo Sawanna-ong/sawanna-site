@@ -1,9 +1,11 @@
 {
+  "type": "module",
   "name": "instituto-sawanna",
   "version": "1.0.0",
   "description": "Site do Instituto Sawanna",
   "scripts": {
-    "dev": "vite",
+    "prebuild": "node scripts/generate-gallery-list.js",
+    "dev": "node scripts/generate-gallery-list.js && vite",
     "build": "vite build",
     "preview": "vite preview"
   },

@@ -16,15 +16,26 @@ import contatoData from '/content/configuracoes/contato.json'
 import geralData from '/content/configuracoes/geral.json'
 
 // =============================================
-// 3. Galeria - carrega itens do CMS (content/galeria/*.json)
+// 3. Galeria - carrega lista de imagens do JSON gerado
 // =============================================
-const galleryModules = import.meta.glob('/content/galeria/*.json', { eager: true })
-const galleryData = Object.values(galleryModules).map(m => m.default)
+let galleryImages = []
 
 // =============================================
 // Inicialização quando DOM estiver pronto
 // =============================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Carrega lista de imagens gerada pelo build script
+    try {
+        const response = await fetch('/gallery-list.json')
+        if (response.ok) {
+            const data = await response.json()
+            galleryImages = data.images || []
+            console.log(`Galeria: ${galleryImages.length} imagens carregadas`)
+        }
+    } catch (err) {
+        console.warn('Não foi possível carregar galeria:', err.message)
+    }
+
     // Renderiza serviços do CMS
     renderServices(servicesData)
 
@@ -118,23 +129,25 @@ function updateSocialLinks(containerId, data) {
 }
 
 // =============================================
-// Renderiza galeria com carrosséis usando dados do CMS
+// Renderiza galeria com carrosséis, dividindo imagens em 3 linhas
 // =============================================
 function renderGallery() {
+    console.log('Carregando galeria com', galleryImages.length, 'imagens')
     const container = document.getElementById('gallery-container')
     if (!container) return
 
-    // agrupa itens por linha definida no JSON
-    const lines = { line1: [], line2: [], line3: [] }
-    galleryData.forEach(item => {
-        const line = item.line || 'line1'
-        if (lines[line]) lines[line].push(item)
-    })
+    // divide imagens em 3 grupos (linhas)
+    const totalImages = galleryImages.length
+    const imagesPerLine = Math.ceil(totalImages / 3)
+    
+    const lines = [
+        galleryImages.slice(0, imagesPerLine),
+        galleryImages.slice(imagesPerLine, imagesPerLine * 2),
+        galleryImages.slice(imagesPerLine * 2)
+    ]
 
-    Object.values(lines).forEach((items, index) => {
-        if (items.length === 0) return
-
-        items.sort((a, b) => (a.order || 0) - (b.order || 0))
+    lines.forEach((lineImages, index) => {
+        if (lineImages.length === 0) return
 
         const wrapper = document.createElement('div')
         wrapper.className = 'carousel-wrapper'
@@ -143,8 +156,8 @@ function renderGallery() {
         track.className = 'carousel-track'
         if (index % 2 !== 0) track.classList.add('reverse')
 
-        const paths = items.map(i => i.image).filter(Boolean)
-        const duplicated = [...paths, ...paths]
+        // duplica imagens para carrossel contínuo
+        const duplicated = [...lineImages, ...lineImages]
 
         duplicated.forEach(src => {
             const img = document.createElement('img')
