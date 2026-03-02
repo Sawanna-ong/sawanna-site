@@ -104,3 +104,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Otimizações para Mobile */
+@media (max-width: 768px) {
+  /* Inputs com font-size 16px para evitar zoom automático */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  
+  /* Touch targets acessíveis (mínimo 44x44px) */
+  button, a[href], [role="button"] {
+    min-height: 44px;
+  }
+}

@@ -66,7 +66,7 @@ function openService(servicesData, serviceId) {
         ? `<div class="h-48 bg-cover bg-center rounded-t-3xl relative overflow-hidden" style="background-image:url('${service.image}')">
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>`
-        : `<div class="h-48 bg-gradient-to-br from-primary to-secondary rounded-t-3xl flex items-center justify-center relative overflow-hidden">
+        : `<div class="h-48 bg-gradient-to-br from-secondary to-secondary-light rounded-t-3xl flex items-center justify-center relative overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <i class="fa-solid ${service.icon} text-6xl text-white/90 relative z-10 drop-shadow-lg"></i>
             </div>`;
@@ -78,7 +78,7 @@ function openService(servicesData, serviceId) {
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
             <div class="p-8">
-                <h3 class="font-heading text-3xl font-bold text-primary mb-4">${service.title}</h3>
+                <h3 class="font-heading text-3xl font-bold text-secondary mb-4">${service.title}</h3>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">${service.fullDesc}</p>
                 <h4 class="font-heading font-bold text-secondary mb-3">O que oferecemos:</h4>
                 <ul class="space-y-2 mb-6">

@@ -1,7 +1,7 @@
 // main.js
 import './input.css'
-import './script.js'
-import { renderServices } from './services-render.js'
+import './scripts/script.js'
+import { renderServices } from './scripts/services-render.js'
 
 // =============================================
 // 1. Carrega dados dos serviços do CMS (content/servicos/*.json)

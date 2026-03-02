@@ -6,36 +6,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menu Mobile
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const header = document.querySelector('header');
     
-    if (navToggle) {
-        navToggle.addEventListener('click', function() {
+    if (navToggle && navMenu) {
+        // Toggle menu
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !isExpanded);
             navMenu.classList.toggle('hidden');
-            navMenu.classList.toggle('flex');
-            navMenu.classList.toggle('flex-col');
-            navMenu.classList.toggle('absolute');
-            navMenu.classList.toggle('top-20');
-            navMenu.classList.toggle('left-0');
-            navMenu.classList.toggle('right-0');
-            navMenu.classList.toggle('bg-white');
-            navMenu.classList.toggle('p-6');
-            navMenu.classList.toggle('shadow-lg');
         });
-    }
-    
-    // Fechar menu ao clicar em um link (mobile)
-    const navLinks = document.querySelectorAll('#nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 1024) {
+        
+        // Fechar menu ao clicar em um link
+        const navLinks = document.querySelectorAll('#nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    navMenu.classList.add('hidden');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+        
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!header.contains(e.target) && !navMenu.classList.contains('hidden')) {
                 navMenu.classList.add('hidden');
-                navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-20', 'left-0', 'right-0', 'bg-white', 'p-6', 'shadow-lg');
                 navToggle.setAttribute('aria-expanded', 'false');
             }
         });
-    });
-    
+    }
     // Carrossel
     let currentSlide = 0;
     const track = document.getElementById('carousel-track');
