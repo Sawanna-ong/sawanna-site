@@ -2,6 +2,7 @@
 import './input.css'
 import './scripts/script.js'
 import { renderServices } from './scripts/services-render.js'
+import { renderContas } from './scripts/contas-render.js'
 
 // =============================================
 // 1. Carrega dados dos serviços do CMS (content/servicos/*.json)
@@ -10,13 +11,21 @@ const serviceModules = import.meta.glob('/content/servicos/*.json', { eager: tru
 const servicesData = Object.values(serviceModules).map(mod => mod.default)
 
 // =============================================
-// 2. Carrega configurações do CMS
+// 2. Carrega dados das contas (balanço patrimonial e balancete)
+// =============================================
+const balanoPatrimonialModules = import.meta.glob('/content/contas/balanco-patrimonial/*.json', { eager: true })
+const balanceteModules = import.meta.glob('/content/contas/balancete/*.json', { eager: true })
+const balanoPatrimonialData = Object.values(balanoPatrimonialModules).map(mod => mod.default)
+const balanceteData = Object.values(balanceteModules).map(mod => mod.default)
+
+// =============================================
+// 3. Carrega configurações do CMS
 // =============================================
 import contatoData from '/content/configuracoes/contato.json'
 import geralData from '/content/configuracoes/geral.json'
 
 // =============================================
-// 3. Galeria - carrega lista de imagens do JSON gerado
+// 4. Galeria - carrega lista de imagens do JSON gerado
 // =============================================
 let galleryImages = []
 
@@ -38,6 +47,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Renderiza serviços do CMS
     renderServices(servicesData)
+
+    // Renderiza contas (balanço patrimonial e balancete)
+    renderContas(balanoPatrimonialData, balanceteData)
 
     // Injeta dados gerais do CMS
     injectGeralData(geralData)

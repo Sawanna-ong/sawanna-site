@@ -73,4 +73,30 @@ collections:
           - { label: "Complemento da Missao 2", name: "missaoComplemento2", widget: "text" }
           - { label: "Destaque da Historia", name: "historia", widget: "text" }
           - { label: "Texto completo da Historia", name: "historiaTexto", widget: "markdown" }
-          - { label: "Citacao da Historia", name: "historiaCitacao", widget: "text" } 
+          - { label: "Citacao da Historia", name: "historiaCitacao", widget: "text" }
+
+  - name: "balanco-patrimonial"
+    label: "Balanço Patrimonial"
+    label_singular: "Balanço Patrimonial"
+    folder: "content/contas/balanco-patrimonial"
+    create: true
+    slug: "{{year}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Ano", name: "year", widget: "number", hint: "Ano do balanço (ex: 2024)" }
+      - { label: "Arquivo PDF", name: "pdf", widget: "file", hint: "Upload do PDF do balanço patrimonial" }
+      - { label: "Data de Publicacao", name: "publicDate", widget: "date", format: "YYYY-MM-DD" }
+
+  - name: "balancete"
+    label: "Balancete"
+    label_singular: "Balancete"
+    folder: "content/contas/balancete"
+    create: true
+    slug: "{{year}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Ano", name: "year", widget: "number", hint: "Ano do balancete (ex: 2024)" }
+      - { label: "Arquivo PDF", name: "pdf", widget: "file", hint: "Upload do PDF do balancete" }
+      - { label: "Data de Publicacao", name: "publicDate", widget: "date", format: "YYYY-MM-DD" } 
