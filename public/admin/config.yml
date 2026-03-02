@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+
+  - name: "galeria"
+    label: "Galeria"
+    folder: "content/galeria"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagem", name: "image", widget: "image" }
+
+  - name: "prestacao"
+    label: "Prestação de Contas"
+    folder: "content/prestacao"
+    create: true
+    slug: "{{year}}"
+    fields:
+      - { label: "Ano", name: "year", widget: "string" }
+      - { label: "Relatório de Atividades (PDF)", name: "relatorio", widget: "file" }
+      - { label: "Balanço Financeiro (PDF)", name: "balanco", widget: "file" }
