@@ -1,19 +1,24 @@
 {
+  "name": "site-ong",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "name": "instituto-sawanna",
-  "version": "1.0.0",
-  "description": "Site do Instituto Sawanna",
   "scripts": {
-    "prebuild": "node scripts/generate-gallery-list.js",
-    "dev": "node scripts/generate-gallery-list.js && vite",
-    "build": "vite build",
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "vue": "^3.5.25"
   },
   "devDependencies": {
-    "vite": "^7.3.1"
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/tsconfig": "^0.8.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vue-tsc": "^3.1.5"
   }
 }
