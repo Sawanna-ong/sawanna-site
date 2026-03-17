@@ -8,5 +8,5 @@ export default defineConfig({
     vue(),
     tailwindcss(),
   ],
-  base: "/site-ong/"
+  base: "/sawanna-site/"
 })
