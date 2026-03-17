@@ -17,6 +17,11 @@ const contasRaw: Conta[] = Object.values(modules).map(m => (m as any).default)
 const contas = computed(() => {
     return [...contasRaw].sort((a, b) => b.year - a.year)
 })
+
+const base = import.meta.env.BASE_URL
+const getPdf = (file: string) => {
+  return `${base}${file.replace(/^\/+/, "")}`
+}
 </script>
 
 <template>
@@ -46,14 +51,14 @@ const contas = computed(() => {
                     <h3 class="font-heading text-xl font-bold text-gray-800 mb-4">Contas {{ conta.year }}</h3>
                     <ul class="space-y-3">
                         <li v-if="conta.balanco">
-                            <a :href="conta.balanco" target="_blank"
+                            <a :href="getPdf(conta.balanco)" target="_blank"
                                 class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
                                 <i class="fa-solid fa-scale-balanced text-xl text-secondary"></i>
                                 <span>Balanço Patrimonial (PDF)</span>
                             </a>
                         </li>
                         <li v-if="conta.balancete">
-                            <a :href="conta.balancete" target="_blank"
+                            <a :href="getPdf(conta.balancete)" target="_blank"
                                 class="flex items-center gap-2 p-3 bg-bg-pink rounded-lg hover:bg-bg-soft transition-colors duration-200">
                                 <i class="fa-solid fa-receipt text-xl text-secondary"></i>
                                 <span>Balancete (PDF)</span>
